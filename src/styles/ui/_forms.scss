@@ -1,0 +1,33 @@
+@use "../variables";
+@use "../mixins";
+
+.form-group {
+  @include mixins.flex(column);
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+.form-control {
+  padding: 0.75rem;
+  border: 1px solid variables.$border-color;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+
+  &:focus {
+    outline: none;
+    border-color: variables.$primary-color;
+  }
+
+  &.error {
+    border-color: variables.$error-color;
+  }
+}
+
+.error-text {
+  color: variables.$error-color;
+  font-size: 0.85rem;
+}

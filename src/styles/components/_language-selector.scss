@@ -1,0 +1,27 @@
+@use "../variables";
+@use "../mixins";
+
+.language-selector {
+  @include mixins.flex(row, center, center);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.language-btn {
+  background: none;
+  border: none;
+  color: variables.$light-text;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+  }
+
+  &:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

@@ -1,0 +1,68 @@
+@use "../variables";
+@use "../mixins";
+@use "sass:color";
+
+.weather-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.weather-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  @include mixins.box-shadow;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__time {
+    font-size: 0.9rem;
+    color: color.adjust(variables.$text-color, $lightness: 20%);
+    margin-bottom: 0.5rem;
+  }
+
+  &__icon {
+    text-align: center;
+    margin-bottom: 0.5rem;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__description {
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+  }
+
+  &__temp {
+    @include mixins.flex(column, center, center);
+    gap: 0.5rem;
+  }
+
+  &__temp-main {
+    font-size: 2rem;
+    font-weight: bold;
+    color: variables.$secondary-color;
+  }
+
+  &__temp-range {
+    @include mixins.flex(row, center, center);
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  &__temp-min {
+    color: variables.$primary-color;
+  }
+
+  &__temp-max {
+    color: variables.$accent-color;
+  }
+}

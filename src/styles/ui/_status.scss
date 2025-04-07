@@ -1,0 +1,33 @@
+@use "../variables";
+@use "sass:color";
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: variables.$secondary-color;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  background-color: color.adjust(variables.$error-color, $lightness: 35%);
+  color: variables.$error-color;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid variables.$error-color;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  background-color: color.adjust(variables.$success-color, $lightness: 45%);
+  color: color.adjust(variables.$success-color, $lightness: -10%);
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid variables.$success-color;
+  margin-bottom: 1rem;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: color.adjust(variables.$text-color, $lightness: 20%);
+}

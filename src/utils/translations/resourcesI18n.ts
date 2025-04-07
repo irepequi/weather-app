@@ -1,0 +1,68 @@
+export const resources = {
+  en: {
+    translation: {
+      login: "Login",
+      email: "Email",
+      password: "Password",
+      logout: "Logout",
+      cities: "Cities",
+      contact: "Contact",
+      temperature: "Temperature",
+      minTemp: "Min",
+      maxTemp: "Max",
+      name: "Name",
+      birthDate: "Birth Date",
+      city: "City",
+      phone: "Phone",
+      send: "Send",
+      locations: {
+        london: "London",
+        toronto: "Toronto",
+        singapore: "Singapore",
+      },
+      messages: {
+        messageSent: "Message sent successfully!",
+        weatherForecast: "Weather Forecast",
+        noForecastData: "No forecast data available for today",
+        pleaseFillAllFields: "Please fill all fields",
+      },
+      error: {
+        enterEmailAndPassword: "Please enter both email and password",
+        invalidEmail: "Please enter a valid email address",
+      },
+    },
+  },
+  es: {
+    translation: {
+      login: "Iniciar sesión",
+      email: "Correo electrónico",
+      password: "Contraseña",
+      logout: "Cerrar sesión",
+      cities: "Ciudades",
+      contact: "Contacto",
+      temperature: "Temperatura",
+      minTemp: "Mínima",
+      maxTemp: "Máxima",
+      name: "Nombre",
+      birthDate: "Fecha de nacimiento",
+      city: "Ciudad",
+      phone: "Teléfono",
+      send: "Enviar",
+      locations: {
+        london: "Londres",
+        toronto: "Toronto",
+        singapore: "Singapur",
+      },
+      messages: {
+        messageSent: "¡Mensaje enviado con éxito!",
+        weatherForecast: "Pronóstico del tiempo",
+        noForecastData: "No hay datos de pronóstico disponibles para hoy",
+        pleaseFillAllFields: "Por favor, complete todos los campos",
+      },
+      error: {
+        enterEmailAndPassword: "Por favor, ingrese correo y contraseña",
+        invalidEmail: "Por favor, ingrese un correo válido",
+      },
+    },
+  },
+};

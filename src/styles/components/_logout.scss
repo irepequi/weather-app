@@ -1,0 +1,16 @@
+@use "../variables";
+@use "sass:color";
+
+.logout-btn {
+  background-color: variables.$accent-color;
+  color: variables.$light-text;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: color.adjust(variables.$accent-color, $lightness: -10%);
+  }
+}

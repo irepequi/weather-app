@@ -1,0 +1,25 @@
+@use "../variables";
+@use "../mixins";
+
+.header {
+  background-color: variables.$secondary-color;
+  color: variables.$light-text;
+  padding: 1rem;
+  @include mixins.flex(row, space-between, center);
+  @include mixins.box-shadow;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__actions {
+    @include mixins.flex(row, flex-end, center);
+    gap: 1rem;
+  }
+
+  .header__actions {
+    @include mixins.flex(row, center, center);
+    gap: 1rem;
+  }
+}

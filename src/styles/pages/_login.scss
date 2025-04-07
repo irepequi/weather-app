@@ -1,0 +1,31 @@
+@use "../variables";
+@use "../mixins";
+@use "sass:color";
+
+.login-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: variables.$light-text;
+  border-radius: 8px;
+  @include mixins.box-shadow;
+}
+
+.login-form {
+  @include mixins.flex(column);
+  gap: 1.5rem;
+
+  &__title {
+    text-align: center;
+    color: variables.$secondary-color;
+    margin-bottom: 1rem;
+  }
+
+  &__error {
+    background-color: color.adjust(variables.$error-color, $lightness: 35%);
+    color: variables.$error-color;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border-left: 4px solid variables.$error-color;
+  }
+}

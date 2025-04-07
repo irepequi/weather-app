@@ -1,0 +1,11 @@
+@use "../mixins";
+
+.contact-form {
+  max-width: 600px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  @include mixins.box-shadow;
+  @include mixins.flex(column);
+  gap: 1.5rem;
+}
