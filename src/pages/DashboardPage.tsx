@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../features/store";
-import { fetchWeather } from "../features/weather/weatherSlice";
+import { fetchWeather,setCity } from "../features/weather/weatherSlice";
 
 import { useTranslation } from "react-i18next";
 
@@ -17,9 +17,14 @@ const DashboardPage = () => {
   const { currentCity, data, loading, error } = useSelector(
     (state: RootState) => state.weather
   );
+  
 
   useEffect(() => {
-    if (currentCity) dispatch(fetchWeather(currentCity));
+    if (!currentCity) {
+      dispatch(setCity("london")); 
+    } else {
+      dispatch(fetchWeather(currentCity));
+    }
   }, [dispatch, currentCity]);
 
   // Group weather data by day

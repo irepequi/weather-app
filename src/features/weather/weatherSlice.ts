@@ -8,7 +8,7 @@ import { fetchWeatherData } from "../../utils/api";
 import type { WeatherState, WeatherData } from "../../utils/interfaces/typeWeathers";
 
 const initialState: WeatherState = {
-  currentCity: "london",
+  currentCity: "",
   data: null,
   loading: false,
   error: null,
@@ -36,6 +36,12 @@ const weatherSlice = createSlice({
     setCity: (state, action: PayloadAction<string>) => {
       state.currentCity = action.payload;
     },
+    clearWeatherState: (state) => {
+      state.currentCity = "";
+      state.data = null;
+      state.loading = false;
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -54,5 +60,5 @@ const weatherSlice = createSlice({
   },
 });
 
-export const { setCity } = weatherSlice.actions;
+export const { setCity, clearWeatherState } = weatherSlice.actions;
 export default weatherSlice.reducer;

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useSelector } from "react-redux";
-import type { RootState } from "../features/store";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "../features/store";
+import { clearWeatherState } from "../features/weather/weatherSlice";
 
 import type { ContactFormData } from "../utils/interfaces/typeContactForm";
 
@@ -11,6 +12,7 @@ import Sidebar from "../components/Sidebar";
 
 const ContactPage = () => {
   const { t } = useTranslation();
+  const dispatch: AppDispatch = useDispatch();
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
 
   const [formData, setFormData] = useState<ContactFormData>({
@@ -23,6 +25,12 @@ const ContactPage = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearWeatherState());
+    };
+  }, [dispatch]);
 
   /**
    * Handles input changes in the contact form.
