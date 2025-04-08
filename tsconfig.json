@@ -8,6 +8,14 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["jest", "node", "vite/client"],
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
   }
 }
