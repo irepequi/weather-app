@@ -1,5 +1,5 @@
 export default {
-  preset: "ts-jest/presets/default-esm",
+  preset: "ts-jest",
   testEnvironment: "jest-environment-jsdom",
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   moduleNameMapper: {
@@ -8,6 +8,13 @@ export default {
   },
   transform: {
     "^.+\\.tsx?$": ["ts-jest", { useESM: true }],
+    // "^.+\\.jsx?$": "babel-jest",
   },
-  setupFiles: ["<rootDir>/jest.setup.ts"],
+  // globals: {
+  //   "ts-jest": {
+  //     useESModules: true, // Esto le indica a Jest que use los módulos ESM
+  //   },
+  // },
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  // setupFiles: ["<rootDir>/jest.setup.ts"],
 };

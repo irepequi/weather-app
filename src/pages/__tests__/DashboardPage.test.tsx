@@ -14,8 +14,13 @@ describe("DashboardPage", () => {
         auth: authReducer,
       },
       preloadedState: {
-        weather: { currentCity: "London", data: null, loading: true, error: null },
-        auth: { isAuthenticated: true },
+        weather: {
+          currentCity: "London",
+          data: null,
+          loading: true,
+          error: null,
+        },
+        auth: { isAuthenticated: true, user: null, error: null },
       },
     });
 

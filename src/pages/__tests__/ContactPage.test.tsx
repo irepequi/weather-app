@@ -3,7 +3,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../../features/auth/authSlice";
 import weatherReducer from "../../features/weather/weatherSlice";
 import languageReducer from "../../features/language/languageSlice";
-import { Provider } from "react";
+import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
+import ContactPage from "../ContactPage";
 
 describe("ContactPage", () => {
   const createTestStore = () =>

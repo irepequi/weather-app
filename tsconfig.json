@@ -9,11 +9,12 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["jest", "node", "vite/client"],
+    "types": ["jest", "node", "vite/client", "@testing-library/jest-dom"],
     "lib": ["dom", "esnext"],
     "jsx": "react-jsx",
-    "target": "ESNext",
-    "module": "NodeNext",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

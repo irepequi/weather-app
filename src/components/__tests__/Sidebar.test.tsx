@@ -20,7 +20,7 @@ describe("Sidebar", () => {
         weather: { currentCity: "", data: null, loading: false, error: null },
         auth: { isAuthenticated: true, user: null, error: null },
         language: { current: "en" },
-      },
+      } as RootState,
     });
 
   it("should render the list of cities", () => {
@@ -49,6 +49,7 @@ describe("Sidebar", () => {
     );
 
     fireEvent.click(screen.getByText(/london/i));
+    
     expect(store.getState().weather.currentCity).toBe("london");
   });
 
